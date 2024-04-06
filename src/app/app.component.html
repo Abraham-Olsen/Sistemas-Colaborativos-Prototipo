@@ -1,24 +1,8 @@
-<h1>App To Do And More!!!</h1>
-<div class="Input">
-<input type="text" [(ngModel)]="tarea">
-
-<select name="cars" id="cars" [(ngModel)]="responsable">
-  <option value="Carlos">Carlos</option>
-  <option value="Gonzalo">Gonzalo</option>
-  <option value="Fernando">Fernando</option>
-  <option value="Amstronm">Ese mae</option>
-</select>
-
-<button (click)="addTask()">Add Todo</button>
-</div>
-
-
-<div class="Tasks">
-<ul>
-  <li *ngFor="let todo of todos">
-    {{todo.tarea}} ||
-    {{todo.completado ? 'Completado' : 'Pendiente'}} ||
-    {{todo.responsable}}
-  </li>
-</ul>
-<div>
+<section class="row">
+  <div class="col">
+    <app-header></app-header>
+  </div>
+  <div class="col">
+    <app-list></app-list>
+  </div>
+</section>
