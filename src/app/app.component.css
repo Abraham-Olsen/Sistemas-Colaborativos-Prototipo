@@ -1,0 +1,13 @@
+.Input{
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    width: 1080px;
+    height: 150px;
+    align-items: center;
+    margin: 0 auto;
+
+    justify-content: space-around;
+    
+
+}
