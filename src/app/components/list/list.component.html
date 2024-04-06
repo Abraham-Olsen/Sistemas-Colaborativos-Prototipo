@@ -1,0 +1,21 @@
+<section class="Input">
+  <input type="text" [(ngModel)]="tarea" />
+
+  <select name="cars" id="cars" [(ngModel)]="responsable">
+    <option value="Carlos">Carlos</option>
+    <option value="Gonzalo">Gonzalo</option>
+    <option value="Fernando">Fernando</option>
+    <option value="Amstronm">Ese mae</option>
+  </select>
+
+  <button class="btn btn-primary" (click)="addTask()">Add Todo</button>
+</section>
+<section class="Tasks">
+  <ul class="list-group">
+    <li *ngFor="let todo of todos" class="list-group-item">
+      {{ todo.tarea }} || {{ todo.completado ? "Completado" : "Pendiente" }} ||
+      {{ todo.responsable }}
+    </li>
+  </ul>
+  <div></div>
+</section>
