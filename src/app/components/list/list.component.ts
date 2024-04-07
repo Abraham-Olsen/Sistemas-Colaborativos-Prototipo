@@ -22,7 +22,6 @@ export class ListComponent {
     this.todos.push(nuevaTarea);
   }
   deleteTask(index: number) {
-    let temporalDeleted = this.todos.splice(index, 1);
-    temporalDeleted[0].completado = true;
+    this.todos[index].completado = true;
   }
 }

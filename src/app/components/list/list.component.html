@@ -22,11 +22,14 @@
       *ngFor="let todo of todos; let index = index"
       class="list-group-item list-group-item-primary"
     >
-      {{ todo.tarea }} || {{ todo.completado ? "Completado" : "Pendiente" }} ||
-      {{ todo.responsable }}
-      <button class="btn btn-success" (click)="deleteTask(index)">
-        Completar tarea
-      </button>
+      <p *ngIf="todo.completado == false">
+        {{ todo.tarea }} ||
+        {{ todo.completado ? "Completado" : "Pendiente" }} ||
+        {{ todo.responsable }}
+        <button class="btn btn-success" (click)="deleteTask(index)">
+          Completar tarea
+        </button>
+      </p>
     </li>
   </ul>
   <div></div>
