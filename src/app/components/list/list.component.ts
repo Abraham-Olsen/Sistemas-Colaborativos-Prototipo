@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Tarea } from './interfaces/Tarea';
 @Component({
   selector: 'app-list',
@@ -6,9 +6,12 @@ import { Tarea } from './interfaces/Tarea';
   styleUrl: './list.component.css',
 })
 export class ListComponent {
-  todos: Tarea[] = [];
+  @Input()
+  public todos: Tarea[] = [];
   tarea = '';
   responsable = '';
+  deletedItem: Tarea[] = [];
+  completado = false;
 
   addTask() {
     const nuevaTarea: Tarea = {
@@ -17,5 +20,8 @@ export class ListComponent {
       responsable: this.responsable,
     };
     this.todos.push(nuevaTarea);
+  }
+  deleteTask(index: number) {
+    this.todos[index].completado = true;
   }
 }

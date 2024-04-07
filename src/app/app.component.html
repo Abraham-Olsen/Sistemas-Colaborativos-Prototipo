@@ -1,8 +1,12 @@
-<section class="row">
-  <div class="col">
-    <app-header></app-header>
-  </div>
-  <div class="col">
-    <app-list></app-list>
-  </div>
-</section>
+<div class="container">
+  <app-header></app-header>
+  <hr />
+  <section class="row">
+    <div class="col">
+      <app-list [todos]="tareas"></app-list>
+    </div>
+    <div class="col">
+      <app-erased-list [tareas]="tareas"></app-erased-list>
+    </div>
+  </section>
+</div>

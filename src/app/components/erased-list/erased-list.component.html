@@ -1,0 +1,14 @@
+<h2 class="mb-3">Tareas eliminadas</h2>
+<section>
+  <ul class="list-group">
+    <li
+      *ngFor="let tarea of tareas; let index = index"
+      class="list-group-item list-group-item-danger"
+    >
+      <p *ngIf="tarea.completado == true">
+        {{ tarea.tarea }} || {{ tarea.completado }} || {{ tarea.responsable }}
+      </p>
+      <p *ngIf="tarea.completado == false">Tarea en proceso</p>
+    </li>
+  </ul>
+</section>

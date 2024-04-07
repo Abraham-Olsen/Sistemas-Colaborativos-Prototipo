@@ -1,20 +1,36 @@
-<section class="Input">
-  <input type="text" [(ngModel)]="tarea" />
-
-  <select name="cars" id="cars" [(ngModel)]="responsable">
-    <option value="Carlos">Carlos</option>
-    <option value="Gonzalo">Gonzalo</option>
-    <option value="Fernando">Fernando</option>
-    <option value="Amstronm">Ese mae</option>
-  </select>
+<h2 class="mb-3">Agregar tarea</h2>
+<section>
+  <input
+    class="form-control mb-2"
+    placeholder="Tarea"
+    type="text"
+    [(ngModel)]="tarea"
+  />
+  <input
+    class="form-control mb-2"
+    placeholder="Nombre del encargado"
+    type="text"
+    [(ngModel)]="responsable"
+  />
 
   <button class="btn btn-primary" (click)="addTask()">Add Todo</button>
 </section>
-<section class="Tasks">
+<hr />
+<section>
   <ul class="list-group">
-    <li *ngFor="let todo of todos" class="list-group-item">
-      {{ todo.tarea }} || {{ todo.completado ? "Completado" : "Pendiente" }} ||
-      {{ todo.responsable }}
+    <li
+      *ngFor="let todo of todos; let index = index"
+      class="list-group-item list-group-item-primary"
+    >
+      <p *ngIf="todo.completado == false">
+        {{ todo.tarea }} ||
+        {{ todo.completado ? "Completado" : "Pendiente" }} ||
+        {{ todo.responsable }}
+        <button class="btn btn-success" (click)="deleteTask(index)">
+          Completar tarea
+        </button>
+      </p>
+      <p *ngIf="todo.completado == true">Tarea completada</p>
     </li>
   </ul>
   <div></div>
