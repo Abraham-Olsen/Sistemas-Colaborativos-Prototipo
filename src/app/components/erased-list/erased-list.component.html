@@ -8,6 +8,7 @@
       <p *ngIf="tarea.completado == true">
         {{ tarea.tarea }} || {{ tarea.completado }} || {{ tarea.responsable }}
       </p>
+      <p *ngIf="tarea.completado == false">Tarea en proceso</p>
     </li>
   </ul>
 </section>
