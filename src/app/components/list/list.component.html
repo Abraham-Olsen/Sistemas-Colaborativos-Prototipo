@@ -22,15 +22,20 @@
       *ngFor="let todo of todos; let index = index"
       class="list-group-item list-group-item-primary"
     >
-      <p *ngIf="todo.completado == false">
-        {{ todo.tarea }} ||
-        {{ todo.completado ? "Completado" : "Pendiente" }} ||
-        {{ todo.responsable }}
+      <div *ngIf="todo.completado == false">
+        <p>Nombre de tarea: {{ todo.tarea }}</p>
+        <p>
+          Estado de la tarea: {{ todo.completado ? "Completado" : "Pendiente" }}
+        </p>
+        <p>Responsable: {{ todo.responsable }}</p>
         <button class="btn btn-success" (click)="deleteTask(index)">
           Completar tarea
         </button>
+      </div>
+
+      <p *ngIf="todo.completado == true">
+        Tarea completada a las {{ todo.horaDeFin }} por {{ todo.responsable }}
       </p>
-      <p *ngIf="todo.completado == true">Tarea completada</p>
     </li>
   </ul>
   <div></div>
