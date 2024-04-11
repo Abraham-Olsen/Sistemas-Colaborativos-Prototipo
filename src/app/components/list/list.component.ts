@@ -12,16 +12,24 @@ export class ListComponent {
   responsable = '';
   deletedItem: Tarea[] = [];
   completado = false;
+  horaDeInicio = '';
+  fecha = '';
 
   addTask() {
     const nuevaTarea: Tarea = {
       tarea: this.tarea,
       completado: false,
       responsable: this.responsable,
+      horaDeInicio: (this.horaDeInicio = new Date().toLocaleTimeString()),
+      horaDeFin: '',
+      fechaDeInicio: (this.fecha = new Date().toLocaleDateString()),
+      fechaDeFin: '',
     };
     this.todos.push(nuevaTarea);
   }
   deleteTask(index: number) {
     this.todos[index].completado = true;
+    this.todos[index].horaDeFin = new Date().toLocaleTimeString();
+    this.todos[index].fechaDeFin = new Date().toLocaleDateString();
   }
 }
