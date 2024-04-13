@@ -10,10 +10,14 @@
         <p>Estado: {{ tarea.completado ? "Completado" : "Pendiente" }}</p>
         <p>Responsable: {{ tarea.responsable }}</p>
         <p>
+          Iniciada el dia {{ tarea.fechaDeInicio }} a las
+          {{ tarea.horaDeInicio }}
+        </p>
+        <p>
           Completada el dia {{ tarea.fechaDeFin }} a las {{ tarea.horaDeFin }}
         </p>
+        <p>Observaciones: {{ tarea.Observaciones }}</p>
       </div>
-
       <p *ngIf="tarea.completado == false">
         Tarea en proceso. Iniciada a las {{ tarea.horaDeInicio }} el dia
         {{ tarea.fechaDeInicio }}
