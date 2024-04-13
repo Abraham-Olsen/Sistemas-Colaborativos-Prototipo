@@ -14,7 +14,10 @@ export class ListComponent {
   completado = false;
   horaDeInicio = '';
   fecha = '';
-  observaciones: string = '';
+  observaciones: string;
+  constructor() {
+    this.observaciones = '';
+  }
 
   addTask() {
     const nuevaTarea: Tarea = {
@@ -33,5 +36,6 @@ export class ListComponent {
     this.todos[index].completado = true;
     this.todos[index].horaDeFin = new Date().toLocaleTimeString();
     this.todos[index].fechaDeFin = new Date().toLocaleDateString();
+    this.todos[index].Observaciones = this.observaciones;
   }
 }
