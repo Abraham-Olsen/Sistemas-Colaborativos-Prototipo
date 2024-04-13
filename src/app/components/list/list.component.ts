@@ -14,6 +14,7 @@ export class ListComponent {
   completado = false;
   horaDeInicio = '';
   fecha = '';
+  observaciones: string = '';
 
   addTask() {
     const nuevaTarea: Tarea = {
@@ -24,6 +25,7 @@ export class ListComponent {
       horaDeFin: '',
       fechaDeInicio: (this.fecha = new Date().toLocaleDateString()),
       fechaDeFin: '',
+      Observaciones: this.observaciones,
     };
     this.todos.push(nuevaTarea);
   }

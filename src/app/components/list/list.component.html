@@ -5,12 +5,14 @@
     placeholder="Tarea"
     type="text"
     [(ngModel)]="tarea"
+    required
   />
   <input
     class="form-control mb-2"
     placeholder="Nombre del encargado"
     type="text"
     [(ngModel)]="responsable"
+    required
   />
 
   <button class="btn btn-primary" (click)="addTask()">Add Todo</button>
@@ -28,9 +30,26 @@
           Estado de la tarea: {{ todo.completado ? "Completado" : "Pendiente" }}
         </p>
         <p>Responsable: {{ todo.responsable }}</p>
-        <button class="btn btn-success" (click)="deleteTask(index)">
-          Completar tarea
-        </button>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <button
+              class="btn btn-success"
+              (click)="deleteTask(index)"
+              type="button"
+            >
+              Completar tarea
+            </button>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Observaciones de la tarea"
+            aria-label=""
+            aria-describedby="basic-addon1"
+            [(ngModel)]="observaciones"
+          />
+        </div>
       </div>
 
       <p *ngIf="todo.completado == true">

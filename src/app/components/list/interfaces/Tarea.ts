@@ -6,4 +6,5 @@ export interface Tarea {
   horaDeFin: string;
   fechaDeInicio: string;
   fechaDeFin: string;
+  Observaciones: string;
 }

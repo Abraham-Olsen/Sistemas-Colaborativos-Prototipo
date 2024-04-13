@@ -12,6 +12,11 @@
         <p>
           Completada el dia {{ tarea.fechaDeFin }} a las {{ tarea.horaDeFin }}
         </p>
+        <p>
+          Iniciada el dia {{ tarea.fechaDeInicio }} a las
+          {{ tarea.horaDeInicio }}
+        </p>
+        <p>Observaciones: {{ tarea.Observaciones }}</p>
       </div>
 
       <p *ngIf="tarea.completado == false">
